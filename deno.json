@@ -1,0 +1,16 @@
+{
+  "name": "@commit/cli",
+  "version": "1.0.0",
+  "exports": "./main.ts",
+  "tasks": {
+    "dev": "deno run --allow-all main.ts",
+    "install": "deno install --allow-all --name commit main.ts"
+  },
+  "imports": {
+    "ai": "npm:ai@latest",
+    "@ai-sdk/openai": "npm:@ai-sdk/openai@latest"
+  },
+  "compilerOptions": {
+    "strict": true
+  }
+}

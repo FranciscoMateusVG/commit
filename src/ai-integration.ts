@@ -9,7 +9,17 @@ export class AIIntegration {
     const apiKey = Deno.env.get('OPENAI_API_KEY')
 
     if (!apiKey) {
-      throw new Error('OPENAI_API_KEY environment variable is required')
+      throw new Error(`OPENAI_API_KEY environment variable is required.
+
+To fix this:
+1. Get your API key from: https://platform.openai.com/api-keys
+2. Add it to your shell profile (~/.bashrc, ~/.zshrc, ~/.profile):
+   export OPENAI_API_KEY="your-api-key-here"
+3. Reload your shell: source ~/.zshrc (or restart terminal)
+4. Verify with: echo $OPENAI_API_KEY
+
+Alternative: Run with the API key directly:
+   OPENAI_API_KEY="your-key" commit`)
     }
 
     const model = openai('gpt-4o-mini')
